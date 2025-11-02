@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: cameras-mcp-server
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python cameras_mcp_web.py
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11"
+      - key: GITHUB_TOKEN
+        sync: false  # This will be set manually in Render dashboard
+    healthCheckPath: /health
+    autoDeploy: true
