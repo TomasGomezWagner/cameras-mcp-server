@@ -20,7 +20,7 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("cameras_mcp")
 
 # Initialize MCP server
-mcp = FastMCP("cameras_mcp")
+mcp = FastMCP("cameras_mcp", host="0.0.0.0", port=10000)
 
 # Constants
 CHARACTER_LIMIT = 25000
@@ -1033,7 +1033,7 @@ if __name__ == "__main__":
 
     try:
         # Use HTTP transport for web deployment
-        mcp.run(transport="sse", port=10000, host="0.0.0.0")
+        mcp.run(transport="sse")
     except Exception as e:
         logger.error(f"Server error: {e}", exc_info=True)
         import sys
