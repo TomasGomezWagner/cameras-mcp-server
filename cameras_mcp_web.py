@@ -1022,14 +1022,14 @@ if __name__ == "__main__":
     logger.info("Starting Camera Speeding Ticket MCP Server...")
 
     # Get port from environment variable (Render sets this)
-    port = int(os.environ.get("PORT", 8000))
+    # port = int(os.environ.get("PORT", 8000))
 
     if GITHUB_TOKEN:
         logger.info("GitHub token detected - private repository access enabled")
     else:
         logger.info("No GitHub token found - only public repository access available")
 
-    logger.info(f"Server will start on port {port}")
+    # logger.info(f"Server will start on port {port}")
 
     try:
         # Use HTTP transport for web deployment
