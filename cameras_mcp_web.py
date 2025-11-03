@@ -1033,7 +1033,7 @@ if __name__ == "__main__":
 
     try:
         # Use HTTP transport for web deployment
-        mcp.run(transport="sse", port=port, host="0.0.0.0")
+        mcp.run(transport="sse")
     except Exception as e:
         logger.error(f"Server error: {e}", exc_info=True)
         import sys
